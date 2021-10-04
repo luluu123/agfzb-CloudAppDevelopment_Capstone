@@ -27,7 +27,7 @@ DEBUG = True
 
 APPEND_SLASH = True
 
-ALLOWED_HOSTS = ["localhost", "capstone-147.eu-gb.mybluemix.net"]
+ALLOWED_HOSTS = ["sktt1platon", "sktt1platon.mybluemix.net", "localhost"]
 
 
 # Application definition
