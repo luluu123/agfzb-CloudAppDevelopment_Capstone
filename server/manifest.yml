@@ -1,11 +1,11 @@
   applications:
   - name: djangoapp
     routes:
-      - route: sktt1platon.mybluemix.net
+      - route: sktt1platon.us-south.cf.appdomain.cloud 
     memory: 128M
     buildpack: python_buildpack
   - name: djangoapp-nginx
     routes:
-      - route: sktt1platon.mybluemix.net/static
+      - route: sktt1platon.us-south.cf.appdomain.cloud/static
     memory: 128M
     buildpack: staticfile_buildpack
