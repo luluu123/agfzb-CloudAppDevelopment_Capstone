@@ -89,7 +89,7 @@ def signup_view(request):
 def get_dealerships(request):
     context = {}
     if request.method == "GET":
-        url = "sktt1platon.us-south.cf.appdomain.cloud/api/dealership"
+        url = "https://a8903b5f.eu-gb.apigw.appdomain.cloud/api/dealership"
         dealerships = get_dealers_from_cloudant(url, state="")
         context["dealerships"] = dealerships
         return render(request, "djangoapp/index.html", context)
@@ -101,7 +101,7 @@ def get_dealerships(request):
 def get_dealer_details(request, dealerId):
     context = {}
     if request.method == "GET":
-        url = "sktt1platon.us-south.cf.appdomain.cloud/api/"
+        url = "https://a8903b5f.eu-gb.apigw.appdomain.cloud/api/"
         reviews = get_dealer_reviews_from_cloudant(url + "review", dealerId=dealerId)
         context["reviews"] = reviews
         dealer = get_dealers_from_cloudant(url + "dealership", dealerId=dealerId)
@@ -136,7 +136,7 @@ def add_review(request, dealerId):
         json_payload = dict()
         json_payload["review"] = review_obj
 
-        res = post_request("sktt1platon.us-south.cf.appdomain.cloud/api/review", json_payload, dealerId=dealerId)
+        res = post_request("https://a8903b5f.eu-gb.apigw.appdomain.cloud/api/review", json_payload, dealerId=dealerId)
         return redirect("djangoapp:dealer_details", dealerId=dealerId)
     elif request.method == "GET" and request.user.is_authenticated:
         cars = CarModel.objects.filter(dealerId=dealerId)
